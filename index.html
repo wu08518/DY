@@ -5,11 +5,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>hello gitee</title>
+  <meta name="baidu-site-verification" content="F5lDpiKOR0" />
+  <meta name="keywords" content="登亿和你在一起" />
+  <meta name="description" content="登亿和你在一起" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <title>登亿和你在一起</title>
+  <link rel="stylesheet" href="./static/css/contact.css">
 </head>
 
 <body>
+  <h1>登亿和你在一起</h1>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
   <p>欢迎使用gitee</p>
+  <button class="testbtn">测试</button>
 </body>
+<script src="./static/js/jquery-1.10.2.min.js"></script>
+<script src="./static/js/httpclient.js"></script>
+<script>
+  $('.testbtn').click(function () {
+    alert('git')
+    console.log('hup');
+
+  })
+  function recommendSwiper(id) {
+    var $item = $(id);
+    var $ul = $item.find("ul");
+    var widthPx = $ul.find('li').eq(0).outerWidth(true)
+    var $prev = $item.find(".prev").eq(0);
+    var $next = $item.find(".next").eq(0);
+    var isSliding = false;
+    $prev.click(function (event) {//左移
+      if (isSliding)
+        return false;
+      var $li = $item.find("ul li");//从图片列表尾端元素移动到首段，并设置整体位移
+      var $last = $li.eq($li.length - 1);
+      var $first = $li.eq(0);
+      $last.insertBefore($first);
+      $ul.css({ "left": "-" + widthPx + "px" });
+      $ul.animate({ "left": "0px" }, 500, function () {//位移完成后重置样式
+        $ul.css({ "left": "", "right": "" });
+        isSliding = false;
+      });
+      isSliding = true;
+      return false;
+    });
+    $next.click(function (event) {
+      if (isSliding)
+        return false;
+      $ul.animate({ "right": widthPx + "px" }, 500, function () {//右移
+        var $li = $item.find("ul li");//完成位移后把滚动消失的元素移到列表尾端，并重置样式
+        var $first = $li.eq(0);
+        var $last = $li.eq($li.length - 1);
+        $first.insertAfter($last);
+        $ul.css({ "left": "", "right": "" });
+        isSliding = false;
+      });
+      isSliding = true;
+      return false;
+    });
+    $ul.find("[style='display:none;']").remove();
+    $ul.append($ul.html());//把图片列表翻倍，以便滚动无缝
+  };
+</script>
 
 </html>
