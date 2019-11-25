@@ -1,0 +1,9 @@
+version: 1.0.10
+files:
+  - url: OADY-1.0.10.exe
+    sha512: q8YalZG99GSyQEIrKfv5wQjvPceyVM1h7RPf2B/Fse4nUzNGWRVe9HLG1euEhlYM0mChcQAhMX89HQXrO9ZauQ==
+    size: 56949803
+path: OADY-1.0.10.exe
+sha512: q8YalZG99GSyQEIrKfv5wQjvPceyVM1h7RPf2B/Fse4nUzNGWRVe9HLG1euEhlYM0mChcQAhMX89HQXrO9ZauQ==
+sha2: 0649d43e1ba9cbc020a5ccb744bf5c2214c58bd0911e9fa2db354ccd672437b4
+releaseDate: '2019-10-11T01:57:48.491Z'

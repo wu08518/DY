@@ -7,6 +7,7 @@ export const m = {
       download: 'download',
       agent: 'Business & Channel',
       FAQ: 'FAQ',
+      instructions: 'Instructions',
       about: 'about',
       signIn: 'Sign in',
       trial: 'Apply trial'
